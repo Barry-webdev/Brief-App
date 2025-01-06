@@ -29,7 +29,10 @@ const taskList = document.getElementById('task-list');
                 const deleteButton = document.createElement('button');
                 deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
                 deleteButton.addEventListener('click', function () {
-                    taskList.removeChild(taskItem);
+                    if (confirm("Voulez-vous vraiment supprimer cette tâche ?")) {
+                        taskList.removeChild(taskItem);
+                        saveTasks();
+                    }
                 });
 
                 taskItem.appendChild(checkbox);
@@ -89,8 +92,10 @@ const taskList = document.getElementById('task-list');
                 const deleteButton = document.createElement('button');
                 deleteButton.innerHTML = '<i class="fas fa-trash"></i>';
                 deleteButton.addEventListener('click', function () {
-                    taskList.removeChild(taskItem);
-                    saveTasks();
+                    if (confirm("Voulez-vous vraiment supprimer cette tâche ?")) {
+                        taskList.removeChild(taskItem);
+                        saveTasks();
+                    }
                 });
 
                 taskItem.appendChild(checkbox);
